@@ -1,6 +1,6 @@
 import Footer from "../components/Footer";
 import Header from "../components/Header";
-import UpcomingEvents from "../components/UpcomingEvents";
+
 import { useState, useEffect } from "react";
 import { FaArrowRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
@@ -19,7 +19,7 @@ import achievement2 from '../assets/Home_images/badge2.png';
 import event1 from "../assets/Home_images/event1.png";
 import event2 from "../assets/Home_images/image.png";
 import event3 from "../assets/Home_images/event3.png";
-
+import Events from "../components/Events"
 
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/solid";
 
@@ -84,25 +84,17 @@ const Home = () => {
           >
             <ChevronRightIcon className="w-6 h-6 md:w-8 md:h-8" />
           </button>
-
-
         </section>
-
-
 
         <section className="flex flex-col items-center justify-center text-center bg-white p-6 md:p-10 ">
           <h2 className="text-2xl lg:text-2xl font-bold mb-6">
             <span className="text-[#0a88d1]">Welcome to IEEE Sri Lanka Section</span>
           </h2>
-
-          <p className="max-w-6xl text-base font-medium leading-relaxed mb-6">
+          <p className="max-w-7xl text-gray-500 text-m">
             The IEEE Sri Lanka Section has been transformed into a global technology platform for the technical professionals of the country.
             It is thriving to bring technical innovation and excellence for the benefit of humanity and achieve technical professionalism.
           </p>
-
-
         </section>
-
 
         {/* Impact Section */}
         <section className="p-2 md:p-10 bg-white text-center text-blue-100">
@@ -126,20 +118,17 @@ const Home = () => {
           </div>
         </section>
 
-
-
         <section className="flex flex-col items-center justify-center text-center bg-white  p-6 md:p-10 ">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-6">
+          <h2 className="text-2xl lg:text-2xl font-bold mb-6">
             <span className="text-[#0a88d1]"> About IEEE Sri Lanka Section</span>
           </h2>
 
-          <p className="max-w-6xl text-base font-medium leading-relaxed ">
+          <p className="max-w-7xl text-gray-500 text-m">
             Formed on the 14th of November 2003, IEEE Sri Lanka Section (member of IEEE Region 10) is growing and expanding at an accelerated pace since then, achieving immense success. The increasing number of passionate set of volunteers helps the Section strive towards greater heights year by year. The vibrant community of the IEEE Sri Lanka Section comprises of university academic staff members, industry professionals and undergraduate and graduate students across the country. IEEE Sri Lanka Section has been established to foster technological innovation and excellence for the benefit of humanity and for the advancement of technical professionalism. Our aim is to be the platform of the global technical community for the aspiring tech professionals of tomorrow
           </p>
 
 
         </section>
-
 
         {/* Featured Events */}
         <section className="p-6 md:p-10 bg-white relative">
@@ -163,10 +152,7 @@ const Home = () => {
               />
             ))}
           </div>
-
         </section>
-
-
 
         {/* Upcoming Events */}
         <section className="flex flex-col items-center justify-center text-center bg-white  p-6 md:p-10 ">
@@ -175,131 +161,135 @@ const Home = () => {
             <span className="text-[#0a88d1]">Leatest Posts</span>
           </h2>
 
-           <div className="flex flex-wrap gap-6">
-         <div className="max-w-sm bg-white rounded-lg shadow-sm">
-      <a href="#">
-        <img
-          className="rounded-t-lg w-full h-48 object-cover"
-          src={event1}
-          alt=""
-        />
-      </a>
-      <div className="p-5">
-        <a href="#">
-          <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900">
-            Noteworthy technology acquisitions 2021
-          </h5>
-        </a>
-        <p className="mb-3 font-normal text-gray-700">
-          Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.
-        </p>
-        <a
-          href="#"
-          className="inline-flex items-center px-3 py-2 text-sm font-medium text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300"
-        >
-          Read more
-          <svg
-            className="rtl:rotate-180 w-3.5 h-3.5 ms-2"
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 14 10"
-          >
-            <path
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M1 5h12m0 0L9 1m4 4L9 9"
-            />
-          </svg>
-        </a>
-      </div>
-    </div>
+          <div className="flex flex-wrap gap-6">
+            <div className="max-w-sm bg-white rounded-lg shadow-sm">
+              <a href="#">
+                <img
+                  className="rounded-t-lg w-full h-48 object-cover"
+                  src={event1}
+                  alt=""
+                />
+              </a>
+              <div className="p-5">
+                <a href="#">
+                  <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900">
+                    Noteworthy technology acquisitions 2021
+                  </h5>
+                </a>
+                <p className="mb-3 font-normal text-gray-700">
+                  Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.
+                </p>
+                <a
+                  href="#"
+                  className="inline-flex items-center px-3 py-2 text-sm font-medium text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300"
+                >
+                  Read more
+                  <svg
+                    className="rtl:rotate-180 w-3.5 h-3.5 ms-2"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 14 10"
+                  >
+                    <path
+                      stroke="currentColor"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M1 5h12m0 0L9 1m4 4L9 9"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
 
-    <div className="max-w-sm bg-white rounded-lg shadow-sm">
-      <a href="#">
-        <img
-          className="rounded-t-lg w-full h-48 object-cover"
-          src={event2}
-          alt=""
-        />
-      </a>
-      <div className="p-5">
-        <a href="#">
-          <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900">
-            Noteworthy technology acquisitions 2021
-          </h5>
-        </a>
-        <p className="mb-3 font-normal text-gray-700">
-          Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.
-        </p>
-        <a
-          href="#"
-          className="inline-flex items-center px-3 py-2 text-sm font-medium text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300"
-        >
-          Read more
-          <svg
-            className="rtl:rotate-180 w-3.5 h-3.5 ms-2"
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 14 10"
-          >
-            <path
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M1 5h12m0 0L9 1m4 4L9 9"
-            />
-          </svg>
-        </a>
-      </div>
-    </div>
+            <div className="max-w-sm bg-white rounded-lg shadow-sm">
+              <a href="#">
+                <img
+                  className="rounded-t-lg w-full h-48 object-cover"
+                  src={event2}
+                  alt=""
+                />
+              </a>
+              <div className="p-5">
+                <a href="#">
+                  <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900">
+                    Noteworthy technology acquisitions 2021
+                  </h5>
+                </a>
+                <p className="mb-3 font-normal text-gray-700">
+                  Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.
+                </p>
+                <a
+                  href="#"
+                  className="inline-flex items-center px-3 py-2 text-sm font-medium text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300"
+                >
+                  Read more
+                  <svg
+                    className="rtl:rotate-180 w-3.5 h-3.5 ms-2"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 14 10"
+                  >
+                    <path
+                      stroke="currentColor"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M1 5h12m0 0L9 1m4 4L9 9"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
 
 
-          <div className="max-w-sm bg-white rounded-lg shadow-sm">
-      <a href="#">
-        <img
-          className="rounded-t-lg w-full h-48 object-cover"
-          src={event3}
-          alt=""
-        />
-      </a>
-      <div className="p-5">
-        <a href="#">
-          <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900">
-            Noteworthy technology acquisitions 2021
-          </h5>
-        </a>
-        <p className="mb-3 font-normal text-gray-700">
-          Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.
-        </p>
-        <a
-          href="#"
-          className="inline-flex items-center px-3 py-2 text-sm font-medium text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300"
-        >
-          Read more
-          <svg
-            className="rtl:rotate-180 w-3.5 h-3.5 ms-2"
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 14 10"
-          >
-            <path
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M1 5h12m0 0L9 1m4 4L9 9"
-            />
-          </svg>
-        </a>
-      </div>
-    </div>
-</div>
+            <div className="max-w-sm bg-white rounded-lg shadow-sm">
+              <a href="#">
+                <img
+                  className="rounded-t-lg w-full h-48 object-cover"
+                  src={event3}
+                  alt=""
+                />
+              </a>
+              <div className="p-5">
+                <a href="#">
+                  <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900">
+                    Noteworthy technology acquisitions 2021
+                  </h5>
+                </a>
+                <p className="mb-3 font-normal text-gray-700">
+                  Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.
+                </p>
+                <a
+                  href="#"
+                  className="inline-flex items-center px-3 py-2 text-sm font-medium text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300"
+                >
+                  Read more
+                  <svg
+                    className="rtl:rotate-180 w-3.5 h-3.5 ms-2"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 14 10"
+                  >
+                    <path
+                      stroke="currentColor"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M1 5h12m0 0L9 1m4 4L9 9"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="flex flex-col items-center justify-center text-center bg-white p-6 md:p-10 ">
+          <Events />
         </section>
 
       </main>
