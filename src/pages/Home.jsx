@@ -1,8 +1,6 @@
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import { useState, useEffect } from "react";
-import { FaArrowRight } from "react-icons/fa";
-import { Link } from "react-router-dom";
 import MovingGallery from "../components/MovingGallery";
 import img1 from "../assets/Home_images/1.png";
 import img2 from "../assets/Home_images/2.png";
@@ -20,6 +18,7 @@ import event2 from "../assets/Home_images/event2.png";
 import event3 from "../assets/Home_images/event3.png";
 import Events from "../components/Events"
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/solid";
+import ScrollToTop from "react-scroll-to-top";
 
 const images = [
   { url: img1, link: "https://ieee.lk/about-us" },
@@ -49,8 +48,13 @@ const Home = () => {
     setCurrentImage((prev) => (prev + 1) % images.length);
   return (
     <div>
-      <Header />
-      <main className="bg-gray-100 pt-[5px]">
+      <div className="fixed top-0 left-0 w-full z-50 bg-white shadow-md">
+        {/* actual navbar content here */}
+        <Header />
+      </div>
+
+      <main className="bg-gray-100 mt-10 pt-20">
+
         {/* Slide show */}
         <section className="relative h-[380px] md:h-[400px] lg:h-[560px] flex items-center justify-center overflow-hidden text-center">
 
@@ -141,32 +145,31 @@ const Home = () => {
           </div>
         </section>
 
-        {/* Acheivements */}
-        <section className="flex flex-col items-center justify-center text-center bg-white p-6 md:p-10 ">
+        {/* Achievements */}
+        <section className="flex flex-col items-center justify-center text-center bg-white p-6 md:p-10">
           <h2 className="text-2xl lg:text-2xl font-bold mb-6">
             <span className="text-[#0a88d1]">Our Recent Achievements</span>
           </h2>
 
-          <div className="flex justify-center gap-6 mb-6">
+          <div className="flex flex-wrap justify-center gap-6">
             {recentAchievementsImages.map((imgSrc, idx) => (
               <img
                 key={idx}
                 src={imgSrc}
                 alt={`Recent achievement ${idx + 1}`}
-                className="max-w-xs rounded-lg shadow-lg"
+                className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 max-w-xs rounded-lg shadow-lg object-cover"
               />
             ))}
           </div>
         </section>
 
         {/* Leatest Posts */}
-        <section className="flex flex-col items-center justify-center text-center bg-white  p-6 md:p-10 ">
+        <section className="flex flex-col items-center justify-center text-center bg-white  p-6 mb:p-10 ">
 
           <h2 className="text-2xl lg:text-2xl font-bold mb-6">
             <span className="text-[#0a88d1]">Leatest Posts</span>
           </h2>
-
-          <div className="flex flex-wrap gap-6">
+          <div className="flex flex-wrap gap-6 mb-10">
             <div className="max-w-sm bg-white rounded-lg shadow-sm">
               <a href="#">
                 <img
@@ -186,7 +189,7 @@ const Home = () => {
                 </p>
                 <a
                   href="#"
-                  className="inline-flex items-center px-3 py-2 text-sm font-medium text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300"
+                  className="inline-flex items-center px-3 py-2 text-sm font-medium text-white bg-[#0a88d1]  rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300"
                 >
                   Read more
                   <svg
@@ -227,7 +230,7 @@ const Home = () => {
                 </p>
                 <a
                   href="#"
-                  className="inline-flex items-center px-3 py-2 text-sm font-medium text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300"
+                  className="inline-flex items-center px-3 py-2 text-sm font-medium text-white bg-[#0a88d1]  rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300"
                 >
                   Read more
                   <svg
@@ -249,7 +252,6 @@ const Home = () => {
               </div>
             </div>
 
-
             <div className="max-w-sm bg-white rounded-lg shadow-sm">
               <a href="#">
                 <img
@@ -269,7 +271,7 @@ const Home = () => {
                 </p>
                 <a
                   href="#"
-                  className="inline-flex items-center px-3 py-2 text-sm font-medium text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300"
+                  className="inline-flex items-center px-3 py-2 text-sm font-medium text-white bg-[#0a88d1] rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300"
                 >
                   Read more
                   <svg
@@ -297,7 +299,7 @@ const Home = () => {
         <section className="flex flex-col items-center justify-center text-center bg-white p-6 md:p-10 ">
           <Events />
         </section>
-
+        <ScrollToTop smooth />
       </main>
       <Footer />
     </div>
