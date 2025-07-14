@@ -14,6 +14,8 @@ import icon1 from "../assets/Home_images/logo1.png";
 import icon2 from "../assets/Home_images/logo2.png";
 import icon3 from "../assets/Home_images/logo3.png";
 import icon4 from "../assets/Home_images/logo4.png";
+import achievement1 from '../assets/Home_images/badge1.png';
+import achievement2 from '../assets/Home_images/badge2.png';
 
 
 
@@ -28,6 +30,8 @@ const images = [
   { url: img4, link: "https://ieee.lk/contact" },
   { url: img5, link: "https://ieee.lk/contact" },
 ];
+
+const recentAchievementsImages = [achievement1, achievement2];
 const Home = () => {
   const [currentImage, setCurrentImage] = useState(0);
 
@@ -135,8 +139,6 @@ const Home = () => {
         </section>
 
 
-       
-
         {/* Featured Events */}
         <section className="p-6 md:p-10 bg-white relative">
           <div>
@@ -144,6 +146,23 @@ const Home = () => {
           </div>
         </section>
 
+<section className="flex flex-col items-center justify-center text-center bg-white p-6 md:p-10 ">
+  <h2 className="text-2xl lg:text-2xl font-bold mb-6">
+    <span className="text-[#0a88d1]">Our Recent Achievements</span>
+  </h2>
+
+  <div className="flex justify-center gap-6 mb-6">
+    {recentAchievementsImages.map((imgSrc, idx) => (
+      <img
+        key={idx}
+        src={imgSrc}
+        alt={`Recent achievement ${idx + 1}`}
+        className="max-w-xs rounded-lg shadow-lg"
+      />
+    ))}
+  </div>
+
+</section>
 
  {/* Upcoming Events */}
         <section className="p-6 md:p-10 bg-gray-300">
