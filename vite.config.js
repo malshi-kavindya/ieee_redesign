@@ -6,7 +6,7 @@ import flowbiteReact from "flowbite-react/plugin/vite";
 
 export default defineConfig({
   plugins: [react(), tailwindcss(), flowbiteReact()],
-  base:"/ieee_redesign",
+  base:"/ieee_redesign/",
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
