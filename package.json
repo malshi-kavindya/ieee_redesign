@@ -2,16 +2,13 @@
   "name": "frontend",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://malshi-kavindya.github.io/ieee_redesign",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "postinstall": "flowbite-react patch",
-    "predeploy":"npm run dev",
-    "deploy": "gh-pages -d dist"
+    "postinstall": "flowbite-react patch"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
