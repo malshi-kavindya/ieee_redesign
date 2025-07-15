@@ -299,6 +299,7 @@ const Home = () => {
         <section className="flex flex-col items-center justify-center text-center bg-white p-6 md:p-10 ">
           <Events />
         </section>
+        
         <ScrollToTop smooth />
       </main>
       <Footer />
